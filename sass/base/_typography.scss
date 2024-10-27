@@ -11,12 +11,18 @@ body {
 .heading-primary {
     color: $color-white;
     text-transform: uppercase;
+    backface-visibility: hidden;
+    margin-bottom: 6rem;
     &--main {
         display: block;
         font-size: 6rem;
         font-weight: 400;
         letter-spacing: 3.5rem;
         animation: moveToLeft 1s ease-out;
+        @include respond(phone) {
+            letter-spacing: 1rem;
+            font-size: 5rem;
+        }
     }
     &--sub {
         display: block;
@@ -25,6 +31,9 @@ body {
         letter-spacing: 1.75rem;
         animation: moveToRight 1s ease-out;
         margin-bottom: 6rem;
+        @include respond(phone) {
+            letter-spacing: 0.5rem;
+        }
     }
 }
 
@@ -39,6 +48,13 @@ body {
     color: transparent;
     letter-spacing: 2px;
     transition: all 1s;
+    @include respond(tab-port) {
+        font-size: 2.5rem;
+        margin-top: 3rem;
+    }
+    @include respond(phone) {
+        font-size: 2rem;
+    }
     &:hover {
         transform: skewY(2deg) skewX(15deg) scale(1.5);
         text-shadow: 0.5rem 1rem 2rem rgba($color-black, .6);
